@@ -1,22 +1,46 @@
 import 'dart:io';
 
-import 'package:assets_audio_player/assets_audio_player.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(
-    const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: XylophoneTwo(),
-    ),
-  );
-} // End Of Main
+void main() => runApp(
+    MaterialApp(debugShowCheckedModeBanner: false, home: XylophoneTwo()));
 
 class XylophoneTwo extends StatelessWidget {
   const XylophoneTwo({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final AudioPlayer player = AudioPlayer();
+
+    void playSound(int number) async {
+      await player.play(
+        AssetSource(
+          'lib/sounds/note$number.wav',
+        ),
+      );
+    }
+
+    Expanded xylophoneItems(
+      Color color,
+      int number,
+    ) {
+      return Expanded(
+        child: ElevatedButton(
+          onPressed: () => playSound(number),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: color,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(0.0),
+              ),
+            ),
+          ),
+          child: const Text(''),
+        ),
+      );
+    }
+
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
@@ -49,112 +73,13 @@ class XylophoneTwo extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Expanded(
-              child: ElevatedButton(
-                onPressed: () {
-                  AssetsAudioPlayer.newPlayer().open(
-                    Audio(
-                      'lib/sounds/note1.wav',
-                    ),
-                    autoStart: true,
-                    showNotification: true,
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(0.0),
-                    ),
-                  ),
-                ),
-                child: const Text(''),
-              ),
-            ),
-            Expanded(
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.orange,
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(0.0),
-                    ),
-                  ),
-                ),
-                child: const Text(''),
-              ),
-            ),
-            Expanded(
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.purple,
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(0.0),
-                    ),
-                  ),
-                ),
-                child: const Text(''),
-              ),
-            ),
-            Expanded(
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.cyan,
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(0.0),
-                    ),
-                  ),
-                ),
-                child: const Text(''),
-              ),
-            ),
-            Expanded(
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.pink,
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(0.0),
-                    ),
-                  ),
-                ),
-                child: const Text(''),
-              ),
-            ),
-            Expanded(
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.yellow,
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(0.0),
-                    ),
-                  ),
-                ),
-                child: const Text(''),
-              ),
-            ),
-            Expanded(
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(0.0),
-                    ),
-                  ),
-                ),
-                child: const Text(''),
-              ),
-            ),
+            xylophoneItems(Colors.blue, 1),
+            xylophoneItems(Colors.yellow, 2),
+            xylophoneItems(Colors.pink, 3),
+            xylophoneItems(Colors.orange, 4),
+            xylophoneItems(Colors.green, 5),
+            xylophoneItems(Colors.cyan, 6),
+            xylophoneItems(Colors.purple, 7),
           ], // End Of Children
         ),
       ),
