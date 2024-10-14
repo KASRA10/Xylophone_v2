@@ -1,7 +1,8 @@
 import 'dart:io';
 
-import 'package:audioplayers/audioplayers.dart';
+// import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() => runApp(
     MaterialApp(debugShowCheckedModeBanner: false, home: XylophoneTwo()));
@@ -11,15 +12,25 @@ class XylophoneTwo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AudioPlayer player = AudioPlayer();
+    // Flutter Toast Message
+    void newToastMessage(String message) => Fluttertoast.showToast(
+          msg: message,
+          textColor: Colors.black,
+          backgroundColor: Colors.white,
+          fontSize: 18,
+          gravity: ToastGravity.CENTER,
+          toastLength: Toast.LENGTH_LONG,
+        );
 
-    void playSound(int number) async {
-      await player.play(
-        AssetSource(
-          'lib/sounds/note$number.wav',
-        ),
-      );
-    }
+    // final AudioPlayer player = AudioPlayer();
+
+    // void playSound(int number) async {
+    //   await player.play(
+    //     AssetSource(
+    //       'lib/sounds/note$number.wav',
+    //     ),
+    //   );
+    // }
 
     Expanded xylophoneItems(
       Color color,
@@ -27,7 +38,7 @@ class XylophoneTwo extends StatelessWidget {
     ) {
       return Expanded(
         child: ElevatedButton(
-          onPressed: () => playSound(number),
+          onPressed: () {},
           style: ElevatedButton.styleFrom(
             backgroundColor: color,
             shape: const RoundedRectangleBorder(
@@ -84,7 +95,7 @@ class XylophoneTwo extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => newToastMessage('Not Available'),
         tooltip: 'Button To Play All Sounds',
         backgroundColor: Colors.white,
         elevation: 15,
