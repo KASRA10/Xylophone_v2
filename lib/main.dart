@@ -44,8 +44,120 @@ class XylophoneTwo extends StatelessWidget {
           ),
         ),
       ),
-      body: const SafeArea(
-        child: Column(),
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(0.0),
+                    ),
+                  ),
+                ),
+                child: const Text(''),
+              ),
+            ),
+            Expanded(
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.orange,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(0.0),
+                    ),
+                  ),
+                ),
+                child: const Text(''),
+              ),
+            ),
+            Expanded(
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.purple,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(0.0),
+                    ),
+                  ),
+                ),
+                child: const Text(''),
+              ),
+            ),
+            Expanded(
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.cyan,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(0.0),
+                    ),
+                  ),
+                ),
+                child: const Text(''),
+              ),
+            ),
+            Expanded(
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.pink,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(0.0),
+                    ),
+                  ),
+                ),
+                child: const Text(''),
+              ),
+            ),
+            Expanded(
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.yellow,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(0.0),
+                    ),
+                  ),
+                ),
+                child: const Text(''),
+              ),
+            ),
+            Expanded(
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(0.0),
+                    ),
+                  ),
+                ),
+                child: const Text(''),
+              ),
+            ),
+          ], // End Of Children
+        ),
+      ),
+      floatingActionButton: IconButton(
+        onPressed: () {},
+        color: Colors.white,
+        tooltip: 'A Button To Press All Sounds Notes',
+        enableFeedback: true,
+        icon: const Icon(
+          Icons.music_note_outlined,
+          semanticLabel: 'Note Icon To Play All Sounds/ Notes',
+        ),
       ),
     ); // End Of Scaffold
   } // End Of Build
