@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -50,7 +51,12 @@ class XylophoneTwo extends StatelessWidget {
           children: [
             Expanded(
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () async {
+                  final player = AudioPlayer();
+                  await player.setSource(
+                    AssetSource('lib/sounds/note1.wav'),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
                   shape: const RoundedRectangleBorder(
@@ -151,7 +157,7 @@ class XylophoneTwo extends StatelessWidget {
       ),
       floatingActionButton: IconButton(
         onPressed: () {},
-        color: Colors.white,
+        color: Colors.black,
         tooltip: 'A Button To Press All Sounds Notes',
         enableFeedback: true,
         icon: const Icon(
