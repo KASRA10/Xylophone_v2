@@ -1,0 +1,38 @@
+name: xylophone_v2
+description: "This is Xylophone Music Game In A very Simple Structure Using some Methods and Packages In Flutter."
+
+publish_to: "none"
+
+homepage: https://github.com/KASRA10/Xylophone_v2.git
+issue_tracker: https://github.com/KASRA10/Xylophone_v2.git
+documentation: https://github.com/KASRA10/Xylophone_v2.git
+repository: https://github.com/KASRA10/Xylophone_v2.git
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  # assets:
+  #   - images/a_dot_burr.jpeg
+
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #         style: italic
