@@ -1,3 +1,6 @@
+# Image Preview 📸
+![XylophoneKasraK10](https://github.com/user-attachments/assets/8b53d02d-37b1-4f27-84af-4b822dfdf176)
+
 # About 📲
 
 This is a Simple Dice Flutter app. I have tried to bring some functionality to a flutter app for first time. It is my personal flutter practice and small project as **Portfolio** as well.
