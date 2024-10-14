@@ -1,6 +1,6 @@
 import 'dart:io';
 
-// import 'package:audioplayers/audioplayers.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -22,15 +22,15 @@ class XylophoneTwo extends StatelessWidget {
           toastLength: Toast.LENGTH_LONG,
         );
 
-    // final AudioPlayer player = AudioPlayer();
+    final AudioPlayer player = AudioPlayer();
 
-    // void playSound(int number) async {
-    //   await player.play(
-    //     AssetSource(
-    //       'lib/sounds/note$number.wav',
-    //     ),
-    //   );
-    // }
+    void playSound(int number) async {
+      await player.play(
+        AssetSource(
+          'lib/sounds/note$number.wav',
+        ),
+      );
+    }
 
     Expanded xylophoneItems(
       Color color,
@@ -38,7 +38,7 @@ class XylophoneTwo extends StatelessWidget {
     ) {
       return Expanded(
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () => playSound(number),
           style: ElevatedButton.styleFrom(
             backgroundColor: color,
             shape: const RoundedRectangleBorder(
